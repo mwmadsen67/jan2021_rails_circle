@@ -1,9 +1,12 @@
-<h1>New User</h1>
+<h1>New User / Sign Up</h1>
 
 <form action="<%= users_url %>" method="POST">
-  <label>Username
-    <input type="text" name="user[username]" value="<%= @user.username%>">
-   
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Username 
+    <input type="text" name="user[username]" value="<%= @user.username %>">
+  </label>
+  <label>Password 
+    <input type="password" placeholder="password" name="user[password]" value="">
   </label>
   <label>Fav Drink
     <input type="text" name="user[favorite_drink]" value="<%= @user.favorite_drink%>">
